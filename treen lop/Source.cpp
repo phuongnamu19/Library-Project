@@ -13,7 +13,8 @@ enum ACTION {
 	HIDE,
 	EDIT,
 	REMOVE,
-	MANAGE_COLLECTION,
+	CREATE_COLLECTION,
+	DELETE_COLLECTION,
 	BORROW,
 	RETURN,
 	SUBCRIBE,
@@ -76,7 +77,9 @@ int main() {
 	Menu* hideBook = new Menu("Hide Book", "", HIDE);
 	Menu* removeBook = new Menu("Remove Book", "", REMOVE);
 	Menu* editBook = new Menu("Edit Book", "", EDIT);
-	Menu* manageCollection = new Menu("Manage Collection", "", MANAGE_COLLECTION);
+	Menu* manageCollection = new Menu("Manage Collection", "");
+	Menu* createCollection = new Menu("Create Collection", "", CREATE_COLLECTION);
+	Menu* deleteCollection = new Menu("Delete Collection", "", DELETE_COLLECTION);
 
 	menuAdmin->addSubMenu(addBook);
 	addBook->addSubMenu(menuAdmin);
@@ -164,8 +167,11 @@ int main() {
 		case REMOVE:
 			//Hàm cho remove book
 			break;
-		case MANAGE_COLLECTION:
-			//Hàm cho manage collections
+		case CREATE_COLLECTION:
+			//Hàm cho create collections
+			break;
+		case DELETE_COLLECTION:
+			//Hàm cho delete collections
 			break;
 		case BORROW:
 			//Hàm cho borrow book

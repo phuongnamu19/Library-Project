@@ -27,4 +27,3 @@ public:
 	User* getUserList();
 	void addBook(Book* book, User* user);
 };
-
