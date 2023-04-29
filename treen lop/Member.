@@ -1,0 +1,52 @@
+#include "Member.h"
+
+Member::Member(string userName, int ID, string password, string phoneNumber, string fullName) : RegisteredUser(userName, ID, password, phoneNumber, fullName)
+{
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
+
+	startYear = 1900 + ltm->tm_year;
+	endYear = startYear + 4;
+	borrowBook = 0;
+}
+
+Member::Member(string userName, int ID, string password, string phoneNumber, string fullName, int startYear, int endYear, int borrowBook) : RegisteredUser(userName, ID, password, phoneNumber, fullName)
+{
+	this->startYear = startYear;
+	this->endYear = endYear;
+	this->borrowBook = borrowBook;
+}
+
+void Member::borrow()
+{
+	borrowBook++;
+}
+
+void Member::returnBook()
+{
+	borrowBook--;
+}
+
+void Member::subscribe()
+{
+	cout << "Successfully subscribed the collection" << endl;
+}
+
+void Member::unsubscribe()
+{
+	cout << "Successfully unsubscribed the collection" << endl;
+}
+
+void Member::displayCollectionList(bool onlySubcribed)
+{
+	cout << "Displaying subscribed collection list:" << endl;
+	for (int i = 0; i < ; i++)
+}
+
+void Member::displayBorrowList()
+{
+	cout << "Displaying borrowed books list:" << endl;
+	for (int i = 0; i < borrowBook; i++) {
+		cout << "- " << Book.name() << endl;
+	}
+}
