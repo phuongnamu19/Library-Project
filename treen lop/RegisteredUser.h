@@ -8,7 +8,7 @@ private:
 	static int userCount;
 public:
 	RegisteredUser();
-	RegisteredUser(int id, string username, string password, string phone, string fullName);
+	RegisteredUser(string username, int id, string password, string phone, string fullName);
 	~RegisteredUser();
 	void setUserName(string username);
 	void setPass(string password);

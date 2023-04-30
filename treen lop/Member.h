@@ -11,8 +11,8 @@ private:
 public:
     Member(string userName, int ID, string password, string phoneNumber, string fullName);
     Member(string userName, int ID, string password, string phoneNumber, string fullName, int startYear, int endYear, int borrowBook);
-    void borrow();
-    void returnBook();
+    void borrow(Book* book);
+    void returnBook(Book* book);
     void subscribe();
     void unsubscribe();
     void displayCollectionList(bool onlySubscribed);
