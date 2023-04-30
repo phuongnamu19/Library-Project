@@ -10,7 +10,7 @@ RegisteredUser::RegisteredUser()
 	userCount++;
 }
 
-RegisteredUser::RegisteredUser(int id, string username, string password, string phone, string fullName)
+RegisteredUser::RegisteredUser(string username, int id, string password, string phone, string fullName)
 {
 	this->id = id;
 	this->username = username;

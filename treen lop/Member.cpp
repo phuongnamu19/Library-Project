@@ -17,14 +17,26 @@ Member::Member(string userName, int ID, string password, string phoneNumber, str
 	this->borrowBook = borrowBook;
 }
 
-void Member::borrow()
+void Member::borrow(Book* book)
 {
-	borrowBook++;
+    if (book->getAvailabilityStatus() > 0) {
+        book->setAvailabilityStatus(book->getAvailabilityStatus() - 1);
+        borrowBook++;
+        cout << "Book " << book->getTitle() << " borrowed successfully!" << endl;
+    } else {
+        cout << "Sorry, no copies of this book are currently available." << endl;
+    }
 }
 
-void Member::returnBook()
+void Member::returnBook(Book* book)
 {
-	borrowBook--;
+    if (borrowBook > 0) {
+        book->setAvailabilityStatus(book->getAvailabilityStatus() + 1);
+        borrowBook--;
+        cout << "Book " << book->getTitle() << " returned successfully!" << endl;
+    } else {
+        cout << "You have not borrowed any books." << endl;
+    }
 }
 
 void Member::subscribe()
@@ -39,14 +51,10 @@ void Member::unsubscribe()
 
 void Member::displayCollectionList(bool onlySubcribed)
 {
-	cout << "Displaying subscribed collection list:" << endl;
-	for (int i = 0; i < ; i++)
+	
 }
 
 void Member::displayBorrowList()
 {
-	cout << "Displaying borrowed books list:" << endl;
-	for (int i = 0; i < borrowBook; i++) {
-		cout << "- " << Book.name() << endl;
-	}
+	
 }
